@@ -1,0 +1,29 @@
+.container {
+    margin:0 auto;
+    padding:1em;
+    font-family:Calibri;
+    color:black;
+    }
+
+label {
+    line-height:2em;
+    }
+
+button {
+    margin-top:1em;
+    color:white;
+    background-color:black;
+    border-color:black;
+    border-radius:0.2em;
+    padding:0.2em 0.7em;
+    font-family:Calibri;
+    font-size:1em;
+}
+
+ul {
+    padding-left:18px;
+}
+
+.hidden {
+    visibility:hidden;
+}
