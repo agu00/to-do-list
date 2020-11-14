@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To-Do List</title>
+    <style>
+
+        .container {
+            margin:0 auto;
+            padding: 1em;
+            font-family: Calibri;
+            color:black;
+            }
+
+        label {
+            line-height: 2em;
+            }
+
+        button {margin-top:1em;color:white;background-color:black;border-color:black;border-radius:0.2em;padding:0.2em 0.7em;font-family: Calibri;font-size: 1em;}
+
+        ul {padding-left:18px;}
+
+        .hidden {visibility:hidden;}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label>Task</label><br>
+        <input type="text" id="inputField" /><br>
+        <label>Due date</label><br>
+        <input type="date" id="duedate" /><br>
+        <button type="submit" id="button">Add</button>
+        <p class="hidden"><sup>Click on an item to remove it from the list.</sup></p>
+        
+        <div id="itemsField">
+          <ul id="list">
+          
+          </ul>
+        </div>
+    </div>
+
+    <script>
+
+        var btn = document.getElementById("button");
+        var input = document.getElementById("inputField");
+        var listOfTasks = document.getElementById("list");
+        var date = document.getElementById("duedate");
+        
+
+        btn.addEventListener("click", function(){ 
+
+            document.getElementsByTagName("p")[0].classList.remove("hidden");
+
+            var task = document.createElement("li");
+            task.textContent = input.value + " | " + date.value;
+            listOfTasks.appendChild(task);
+
+            task.addEventListener("click", function(){this.remove();})
+        })
+
+    </script>
+    
+</body>
+</html>
